@@ -112,7 +112,7 @@ const Box = ({
     >
       <h2 className="font-bold">{title}</h2>
       <p className="">{description}</p>
-      <button className="sm:p-2 cursor-pointer bg-transparent  rounded-md text-white bg-orange-600 w-1/2 p-1">
+      <button className="sm:p-2 cursor-pointer rounded-md text-white bg-orange-600 w-1/2 p-1">
         {button}
       </button>
     </motion.div>
