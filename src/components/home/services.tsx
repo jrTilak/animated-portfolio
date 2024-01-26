@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import SERVICES from "../../assets/constants/services";
 
 const variants = {
   initial: {
@@ -18,32 +19,6 @@ const variants = {
 };
 
 const Services = () => {
-  const boxes = [
-    {
-      title: "Branding",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum libero enim nisi aliquam consectetur expedita magni eius ex corrupti animi! Ad nam pariatur assumenda quae mollitia libero repellat explicabo maiores?",
-      button: "Go",
-    },
-    {
-      title: "Branding",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum libero enim nisi aliquam consectetur expedita magni eius ex corrupti animi! Ad nam pariatur assumenda quae mollitia libero repellat explicabo maiores?",
-      button: "Go",
-    },
-    {
-      title: "Branding",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum libero enim nisi aliquam consectetur expedita magni eius ex corrupti animi! Ad nam pariatur assumenda quae mollitia libero repellat explicabo maiores?",
-      button: "Go",
-    },
-    {
-      title: "Branding",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum libero enim nisi aliquam consectetur expedita magni eius ex corrupti animi! Ad nam pariatur assumenda quae mollitia libero repellat explicabo maiores?",
-      button: "Go",
-    },
-  ];
   return (
     <motion.div
       className="h-full flex flex-col justify-between"
@@ -57,8 +32,8 @@ const Services = () => {
         variants={variants}
       >
         <p className="font-extralight text-xl text-gray-400 text-right">
-          I focus on helping your brand grow
-          <br /> and move forward
+          I focus on building capative WebApps
+          <br /> using the latest technologies.
         </p>
         <hr className="w-[300px] h-0.5 bg-gray-800 opacity-60" />
       </motion.div>
@@ -79,7 +54,7 @@ const Services = () => {
       >
         {
           <div className="flex gap-5 justify-center items-center">
-            {boxes.map((box) => (
+            {SERVICES.map((box) => (
               <Box
                 key={box.title}
                 title={box.title}
@@ -108,10 +83,10 @@ const Box = ({
   return (
     <motion.div
       className="sm:p-12 border-2 border-gray-800 flex flex-col justify-between items-center gap-5 p-2 rounded-md shadow-md"
-      whileHover={{ scale: 1.05, backgroundColor: "#111132"}}
+      whileHover={{ scale: 1.05, backgroundColor: "#111132" }}
     >
-      <h2 className="font-bold">{title}</h2>
-      <p className="">{description}</p>
+      <h2 className="font-bold text-center text-purple-300">{title}</h2>
+      <p className="text-center">{description}</p>
       <button className="sm:p-2 cursor-pointer rounded-md text-white bg-orange-600 w-1/2 p-1">
         {button}
       </button>

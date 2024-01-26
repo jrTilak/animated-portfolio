@@ -50,21 +50,22 @@ const Single = ({
     <section>
       <div className="flex items-center justify-center w-full h-full overflow-hidden">
         <div className="max-w-7xl h-full m-auto flex items-center justify-center gap-12 flex-col sm:flex-row">
-          <div className="flex-[1] h-1/2 w-full max-h-72" ref={ref}>
-            <img 
-            className="w-full h-full sm:object-cover object-contain"
-            src={item.img} alt="" />
+          <div className="flex-[1] h-3/5 w-full" ref={ref}>
+            <img
+              className="w-full h-full sm:object-cover object-contain rounded-lg"
+              src={item.img}
+              alt=""
+            />
           </div>
-          <motion.div className="flex-[1] flex flex-col gap-7 pt-2 items-center text-center" style={{ y }}>
-            <h2
-            className="sm:text-7xl text-4xl"
-            >{item.title}</h2>
-            <p
-            className="text-gray-400 text-base sm:text-xl"
-            >{item.desc}</p>
-            <button
-            className="bg-orange-400 p-2 w-48 rounded-lg cursor-pointer"
-            >See Demo</button>
+          <motion.div
+            className="flex-[1] flex flex-col gap-7 pt-2 items-start"
+            style={{ y }}
+          >
+            <h2 className="sm:text-7xl text-4xl">{item.title}</h2>
+            <p className="text-gray-400 text-base sm:text-xl">{item.desc}</p>
+            <button className="bg-orange-400 p-2 w-48 rounded-lg cursor-pointer">
+              See Demo
+            </button>
           </motion.div>
         </div>
       </div>
@@ -86,12 +87,12 @@ const Portfolio = () => {
   });
 
   return (
-    <div className="relative" ref={ref}>
+    <div className="relative" ref={ref} id="portfolio">
       <div className="sticky top-0 left-0 sm:pt-12 text-center text-orange-400 sm:text-4xl pt-[calc(100vh-100px) text-xl">
         <h1>Featured Works</h1>
 
         {/* Progress  Bar */}
-        <motion.div style={{ scaleX }} className="h-2 bg-white"></motion.div>
+        <motion.div style={{ scaleX }} className="h-0.5 bg-white"></motion.div>
       </div>
       {items.map((item) => (
         <Single item={item} key={item.id} />

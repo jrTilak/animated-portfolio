@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import ScrollPng from "../../assets/images/scroll.png";
 import HeroPng from "../../assets/images/hero.png";
+import { useState } from "react";
 const textVariants = {
   initial: {
     x: -500,
@@ -68,24 +69,29 @@ const Hero = () => {
             className="text-3xl tracking-widest"
             variants={textVariants}
           >
-            HARVEY TYLER
+            TILAK THAPA
           </motion.h2>
           <motion.h1
             className="text-4xl sm:text-7xl font-bold"
             variants={textVariants}
           >
-            Web developer and UI designer
+            Full Stack <br />
+            Web Developer
           </motion.h1>
           <motion.div variants={textVariants} className="buttons z-10">
-            <motion.button variants={textVariants} className="z-10">
-              See the Latest Works
-            </motion.button>
-            <motion.button className="z-10" variants={textVariants}>Contact Me</motion.button>
+            <AnimatedButton text="About Me" />
+            <AnimatedButton text="Projects" />
           </motion.div>
           <motion.img
             variants={textVariants}
             animate="scrollButton"
             src={ScrollPng}
+            onClick={() => {
+              window.scrollTo({
+                top: 2 * window.innerHeight,
+                behavior: "smooth",
+              });
+            }}
             alt=""
             className="w-12 cursor-pointer z-10"
           />
@@ -107,3 +113,38 @@ const Hero = () => {
 };
 
 export default Hero;
+
+const AnimatedButton = ({ text }: { text: string }) => {
+  const [hover, setHover] = useState(false);
+  const hoverVariants = {
+    initial: {
+      opacity: 0,
+      height: 0,
+      width: 0,
+    },
+    animate: {
+      opacity: 0.4,
+      height: "200%",
+      width: "200%",
+      transition: {
+        duration: 0.5,
+      },
+    },
+  } as const;
+  return (
+    <motion.button
+      variants={textVariants}
+      className="z-10 relative overflow-hidden w-32"
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      {text}
+      <motion.div
+        variants={hoverVariants}
+        animate={hover ? "animate" : "initial"}
+        className="absolute rounded-full bg-white opacity-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        style={{ backdropFilter: "blur(10px)" }}
+      ></motion.div>
+    </motion.button>
+  );
+};

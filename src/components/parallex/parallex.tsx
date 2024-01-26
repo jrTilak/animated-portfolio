@@ -27,7 +27,7 @@ const Parallax = ({ type }: { type: string }) => {
         style={{ y: yText }}
         className="text-7xl text-center sm:text-right sm:text-8xl"
       >
-        {type === "services" ? "What We Do?" : "What We Did?"}
+        {type === "services" ? "What I Do?" : "What I Did?"}
       </motion.h1>
       <motion.div className="bg-contain bg-no-repeat  sm:bg-cover bg-bottom w-full h-full absolute z-30 bg-[url('/mountains.png')]" />
       <motion.div

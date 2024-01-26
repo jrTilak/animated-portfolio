@@ -1,5 +1,6 @@
 import Cursor from "./components/cursor/cursor";
-import Contact from "./components/home/contact";
+import About from "./components/home/about";
+import Contact from "./components/home/about";
 import Hero from "./components/home/hero";
 import Portfolio from "./components/home/portfolio";
 import Services from "./components/home/services";
@@ -16,19 +17,17 @@ function App() {
         <Sidebar />
         <Hero />
       </section>
-
+      <section id="services">
+        <Parallax type="services" />
+      </section>
       <section>
         <Services />
       </section>
       <section id="portfolio">
         <Parallax type="portfolio" />
       </section>
-      <section>
-        <Portfolio />
-      </section>
-      <section id="contact">
-        <Contact />
-      </section>
+      <Portfolio />
+      <About/>
     </main>
   );
 }
